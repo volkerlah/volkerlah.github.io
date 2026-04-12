@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: rgb(255, 186, 83);
+}
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: rgb(32, 29, 29);
+  font-family: "Neuton", serif;
+}
+
+/* navbar */
+.navbar div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(0, 0, 0);
+  opacity: 85%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+img.logo {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.navbar .Logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.navbar .Logo span,
+.home h1 span {
+  color: rgb(218, 148, 20);
+}
+.navbar .navbar-extra a {
+  margin: 0 2rem;
+  font-size: 1.4rem;
+}
+.navbar .navbar-extra a:hover {
+  color: rgb(161, 110, 15);
+}
+.navbar .navbar-extra a::after,
+.home .btn::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid rgb(114, 76, 7);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .navbar-extra a:hover::after,
+.home .btn:hover::after {
+  transform: scaleX(0.7);
+}
+
+/* home */
+.home {
+  box-sizing: border-box;
+  padding: 10% 7% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(img/main.jpg);
+  background-size: cover;
+  background-position: center;
+  text-shadow: 1px 1px 4px rgb(0, 0, 0);
+  position: relative;
+}
+.home h1,
+.schedule h1 {
+  font-size: 4rem;
+  font-weight: 800;
+}
+.home p {
+  font-weight: 600;
+  font-size: 1.5rem;
+  width: 50%;
+  text-align: center;
+  margin: 2rem 0;
+}
+.home .btn {
+  text-shadow: none;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 1.4rem;
+  border-radius: 80%;
+}
+.home .event ul,
+.schedule .event ul {
+  display: flex;
+  list-style: none;
+}
+.home .event ul {
+  gap: 5rem;
+}
+.home .event ul li,
+.schedule .event ul li {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* schedule */
+
+.schedule .event ul {
+  justify-content: space-around;
+  margin: 5rem 0;
+  list-style: none;
+  width: calc(100vw - 5rem);
+  gap: 5rem;
+  height: 65vh;
+}
+
+.schedule .event ul li {
+  width: 28rem;
+  text-align: center;
+  height: 30rem;
+  border-radius: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.schedule .event ul li.cerita {
+  align-self: flex-start;
+}
+.schedule .event ul li.debat {
+  align-self: flex-start;
+}
+.schedule .event ul li.tour {
+  align-self: center;
+}
+.schedule .event ul li h3 {
+  color: rgb(218, 148, 20);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+/* gambar slider di jadwal */
+.schedule-img {
+  width: 100%;
+  height: 25rem;
+  object-fit: contain; /* ← ini kunci agar gambar penuh tidak terpotong */
+  object-position: center;
+  background-color: rgba(0, 0, 0, 0.3); /* opsional: area kosong jadi gelap */
+  border-radius: 15%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+.schedule-img.fade {
+  opacity: 0;
+}
+
+.cerita-img-link,
+.tour-img-link,
+.debat-img-link {
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  width: 100%;
+}
+
+/* about & contact */
+.about,
+.contact,
+.schedule {
+  box-sizing: border-box;
+  padding: 7% 7% 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.about h1,
+.contact h1,
+.schedule h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+.about h1 span,
+.contact h1 span {
+  color: rgb(218, 148, 20);
+}
+.about .content {
+  width: 100%;
+  max-width: 1200px;
+}
+.vision-mission {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+.about .card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 2rem;
+  flex: 1;
+  min-width: 250px;
+}
+.about .card h3 {
+  font-size: 2rem;
+  color: rgb(218, 148, 20);
+  margin-bottom: 1rem;
+}
+.about .card ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.team h2,
+.facilities h2 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+.team-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.team-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  width: 200px;
+}
+.team-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.facilities ul {
+  list-style: disc;
+  padding-left: 2rem;
+  columns: 2;
+  column-gap: 3rem;
+}
+.ketua {
+  background-image: url(img/ketua.png);
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.pembimbing {
+  background-image: url(img/guru.png);
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.panitia {
+  background-image: url(img/visual.png);
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem 0;
+}
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+.info-item {
+  margin-bottom: 1.5rem;
+}
+.info-item h3 {
+  font-size: 1.3rem;
+  color: rgb(218, 148, 20);
+  margin-bottom: 0.3rem;
+}
+.social-links a {
+  margin-right: 1rem;
+}
+.map {
+  flex: 1;
+  min-width: 300px;
+}
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+.contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(255, 186, 83);
+  border-radius: 5px;
+  color: rgb(255, 186, 83);
+  font-family: inherit;
+}
+.contact-form .btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+}
+/* efek gradien bawah section */
+section::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(
+    0deg,
+    rgba(32, 29, 29, 1) 3%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+section {
+  position: relative;
+}
