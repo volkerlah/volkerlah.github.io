@@ -333,7 +333,7 @@ img.logo {
   width: 100%;
 }
 /* efek gradien bawah section */
-section::after {
+section.home::after {
   content: "";
   position: absolute;
   display: block;
