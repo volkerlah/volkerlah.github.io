@@ -252,7 +252,7 @@
       // WhatsApp
       document
         .getElementById("waButton")
-        .addEventListener("click", function () {
+        .addEventListener("click", function kirimPesanKeWhatsApp() {
           let nama = document.getElementById("nama").value.trim();
           let email = document.getElementById("email").value.trim();
           let pesan = document.getElementById("pesan").value.trim();
@@ -272,58 +272,49 @@
 
       // Slider gambar debat dengan fade smooth
 
-      const img = document.getElementById("debatSlider");
-      const imgc = document.getElementById("imgc");
-      const imgt = document.getElementById("imgt");
+      // Fungsi untuk menjalankan slider otomatis dengan efek fade
+      function startSlider(imgElement, imagesArray) {
+        let idx = 0;
+        setInterval(() => {
+          imgElement.classList.add("fade");
+          setTimeout(() => {
+            idx = (idx + 1) % imagesArray.length;
+            imgElement.src = imagesArray[idx];
+            imgElement.classList.remove("fade");
+          }, 250);
+        }, 3000);
+      }
 
-      const imaget = [
+      // Ambil elemen gambar
+      const imgDebat = document.getElementById("debatSlider");
+      const imgCerita = document.getElementById("imgc");
+      const imgTour = document.getElementById("imgt");
+
+      // Daftar gambar untuk masing-masing slider
+      const imagesTour = [
         "img/Tour.jpeg",
         "img/tour1.png",
         "img/tour2.jpeg",
         "img/tour3.jpeg",
       ];
 
-      let idxT = 0;
-      setInterval(() => {
-        imgt.classList.add("fade");
-        setTimeout(() => {
-          idxT = (idxT + 1) % imaget.length;
-          imgt.src = imaget[idxT];
-          imgt.classList.remove("fade");
-        }, 250);
-      }, 3000);
-
-      const imagec = [
+      const imagesCerita = [
         "img/Cerita.jpeg",
         "img/cerita1.jpeg",
         "img/cerita2.jpeg",
       ];
 
-      let idxC = 0;
-      setInterval(() => {
-        imgc.classList.add("fade");
-        setTimeout(() => {
-          idxC = (idxC + 1) % imagec.length;
-          imgc.src = imagec[idxC];
-          imgc.classList.remove("fade");
-        }, 250);
-      }, 3000);
-
-      const imagesd = [
+      const imagesDebat = [
         "img/Debat.jpeg",
         "img/debat1.jpeg",
         "img/debat2.jpeg",
         "img/debat3.jpeg",
       ];
-      let idx = 0;
-      setInterval(() => {
-        img.classList.add("fade");
-        setTimeout(() => {
-          idx = (idx + 1) % imagesd.length;
-          img.src = imagesd[idx];
-          img.classList.remove("fade");
-        }, 250);
-      }, 3000);
+
+      // Jalankan slider
+      startSlider(imgTour, imagesTour);
+      startSlider(imgCerita, imagesCerita);
+      startSlider(imgDebat, imagesDebat);
     </script>
   </body>
 </html>
